@@ -106,6 +106,7 @@ func AdminUserSave(c *gin.Context) {
 		Name:     Request.Data.Name,
 		Avatar:   Request.Data.Avatar,
 		RolesIds: Request.Data.Roles,
+		Status:   1,
 		Extra: map[string]interface{}{
 			"phone": Request.Data.Extra.Phone,
 			"email": Request.Data.Extra.Email,
