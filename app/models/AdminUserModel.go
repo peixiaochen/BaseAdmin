@@ -128,8 +128,8 @@ type AdminUserList struct {
 	Avatar      string               `json:"avatar"`
 	Status      uint8                `json:"status"`
 	Extra       datatypes.JSON       `json:"extra"`
-	CreatedAt   time.Time            `json:"created_at"`
-	UpdatedAt   time.Time            `json:"updated_at"`
+	CreatedAt   JsonTime             `json:"created_at"`
+	UpdatedAt   JsonTime             `json:"updated_at"`
 	Roles       []*AdminRoleUserList `json:"roles"`
 	LastLoginIp string               `json:"last_login_ip"`
 }

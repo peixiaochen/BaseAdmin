@@ -6,10 +6,10 @@ import (
 )
 
 type AdminRolePermissionModel struct {
-	RoleId       uint      `json:"role_id"`
-	PermissionId uint      `json:"permission_id"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	RoleId       uint     `json:"role_id"`
+	PermissionId uint     `json:"permission_id"`
+	CreatedAt    JsonTime `json:"created_at"`
+	UpdatedAt    JsonTime `json:"updated_at"`
 }
 
 func (AdminRolePermissionModel) TableName() string {

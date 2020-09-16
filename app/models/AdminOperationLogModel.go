@@ -14,8 +14,8 @@ type AdminOperationLogModel struct {
 	Method    string      `json:"method"`
 	Ip        string      `json:"ip"`
 	Input     interface{} `json:"input"`
-	CreatedAt time.Time   `json:"created_at"`
-	UpdatedAt time.Time   `json:"updated_at"`
+	CreatedAt JsonTime    `json:"created_at"`
+	UpdatedAt JsonTime    `json:"updated_at"`
 }
 
 func (AdminOperationLogModel) TableName() string {
@@ -54,8 +54,8 @@ type AdminOperationLogList struct {
 	UserId    uint           `json:"user_id"`
 	Username  string         `json:"username"`
 	Input     datatypes.JSON `json:"input"`
-	CreatedAt time.Time      `json:"created_at"`
-	UpdatedAt time.Time      `json:"updated_at"`
+	CreatedAt JsonTime       `json:"created_at"`
+	UpdatedAt JsonTime       `json:"updated_at"`
 }
 
 func (a *AdminOperationLogModel) GetAll(RequestData map[string]interface{}, Offset uint64, Limit uint8) (Data interface{}, err error) {

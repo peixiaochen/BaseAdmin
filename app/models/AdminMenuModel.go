@@ -8,15 +8,15 @@ import (
 )
 
 type AdminMenuModel struct {
-	ID            uint      `gorm:"primary_key" json:"id"`
-	ParentId      uint      `json:"parent_id"`
-	Order         int       `json:"order"`
-	Title         string    `json:"title"`
-	Icon          string    `json:"icon"`
-	Uri           string    `json:"uri"`
-	CreatedAt     time.Time `json:"created_at"`
-	UpdatedAt     time.Time `json:"updated_at"`
-	PermissionIds []uint    `json:"permissions" gorm:"-"`
+	ID            uint     `gorm:"primary_key" json:"id"`
+	ParentId      uint     `json:"parent_id"`
+	Order         int      `json:"order"`
+	Title         string   `json:"title"`
+	Icon          string   `json:"icon"`
+	Uri           string   `json:"uri"`
+	CreatedAt     JsonTime `json:"created_at"`
+	UpdatedAt     JsonTime `json:"updated_at"`
+	PermissionIds []uint   `json:"permissions" gorm:"-"`
 }
 
 func (a AdminMenuModel) SortAdminMenu(OrderIds []Requests.AdminMenuSortRequestDataOrderIds, Start uint, ParentId uint) (res bool, err error) {
@@ -144,8 +144,8 @@ type AdminMenuTree struct {
 	Icon      string           `json:"icon"`
 	Uri       string           `json:"uri"`
 	ChildData []*AdminMenuTree `json:"child_data"`
-	CreatedAt time.Time        `json:"created_at"`
-	UpdatedAt time.Time        `json:"updated_at"`
+	CreatedAt JsonTime         `json:"created_at"`
+	UpdatedAt JsonTime         `json:"updated_at"`
 }
 
 func (a AdminMenuModel) GetMenuTree(ParentId uint, MenuIds []uint) (Data []*AdminMenuTree, err error) {

@@ -72,8 +72,8 @@ type AdminPermissionList struct {
 	Description string                     `json:"description"`
 	HttpMethod  string                     `json:"http_method"`
 	HttpPath    string                     `json:"http_path"`
-	CreatedAt   time.Time                  `json:"created_at"`
-	UpdatedAt   time.Time                  `json:"updated_at"`
+	CreatedAt   JsonTime                   `json:"created_at"`
+	UpdatedAt   JsonTime                   `json:"updated_at"`
 	Roles       []*AdminPermissionRoleList `json:"roles"`
 }
 

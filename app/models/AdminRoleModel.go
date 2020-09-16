@@ -114,8 +114,8 @@ type AdminRoleList struct {
 	Name        string                     `json:"name"`
 	Description string                     `json:"description"`
 	Status      uint8                      `json:"status"`
-	CreatedAt   time.Time                  `json:"created_at"`
-	UpdatedAt   time.Time                  `json:"updated_at"`
+	CreatedAt   JsonTime                   `json:"created_at"`
+	UpdatedAt   JsonTime                   `json:"updated_at"`
 	Menus       []*AdminRoleMenuList       `json:"menus"`
 	Permissions []*AdminRolePermissionList `json:"permissions"`
 }
