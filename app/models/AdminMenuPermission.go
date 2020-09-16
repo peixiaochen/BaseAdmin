@@ -2,7 +2,6 @@ package models
 
 import (
 	"github.com/peixiaochen/BaseAdmin/pkg/database"
-	"time"
 )
 
 type AdminMenuPermissionModel struct {

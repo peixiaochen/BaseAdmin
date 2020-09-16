@@ -2,14 +2,12 @@ package models
 
 import (
 	"github.com/gookit/goutil/jsonutil"
-	"github.com/jinzhu/gorm"
 	"github.com/peixiaochen/BaseAdmin/pkg/database"
 	"gorm.io/datatypes"
-	"time"
 )
 
 type AdminUserModel struct {
-	gorm.Model
+	Mysql
 	//此处就是用空格
 	Username string      `json:"username" gorm:"unique;<-:create"`
 	Password string      `json:"password" gorm:"<-:update"`

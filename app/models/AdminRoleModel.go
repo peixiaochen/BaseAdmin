@@ -1,13 +1,11 @@
 package models
 
 import (
-	"github.com/jinzhu/gorm"
 	"github.com/peixiaochen/BaseAdmin/pkg/database"
-	"time"
 )
 
 type AdminRoleModel struct {
-	gorm.Model
+	Mysql
 	//此处就是用空格
 	Name          string `json:"name" gorm:"unique;<-:create"`
 	Description   string `json:"description" gorm:"<-:update"`

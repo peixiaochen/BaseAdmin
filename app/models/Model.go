@@ -13,6 +13,12 @@ type Model interface {
 	GetAll(RequestData map[string]interface{}, Offset uint64, Limit uint8) (Data interface{}, err error)
 	GetOne(Id uint) (Data interface{}, err error)
 }
+type Mysql struct {
+	ID        uint `gorm:"primary_key" json:"id"`
+	CreatedAt JsonTime
+	UpdatedAt JsonTime
+	DeletedAt *time.Time `sql:"index"`
+}
 
 type JsonTime struct {
 	time.Time
