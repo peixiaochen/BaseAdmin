@@ -79,6 +79,7 @@ type AdminUserSaveRequestData struct {
 	UserName             string                         `json:"username" validate:"required|string|Unique|minLen:2"`
 	Password             string                         `json:"password" validate:"required_without:Id|minLen:6"`
 	PasswordConfirmation string                         `json:"password_confirmation" validate:"required_without:Id|eq_field:Password"`
+	Status               uint8                          `json:"status" validate:"uint8|in:0,1"`
 	Avatar               string                         `json:"avatar" validate:"string"`
 	Extra                *AdminUserSaveRequestDataExtra `json:"extra" validate:"required"`
 	Roles                []uint                         `json:"roles" validate:"isInts|CheckCount"`

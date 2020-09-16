@@ -100,13 +100,17 @@ func AdminUserSave(c *gin.Context) {
 	if Request.Data.Password != "" {
 		Request.Data.Password = lib.SubstrMd5(Request.Data.Password, config.PasswordSetting.PasswordStart, config.PasswordSetting.PasswordLength)
 	}
+	var status uint8 = 1
+	if Request.Data.Id > 0 {
+		status = Request.Data.Status
+	}
 	Model = &models.AdminUserModel{
 		Username: Request.Data.UserName,
 		Password: Request.Data.Password,
 		Name:     Request.Data.Name,
 		Avatar:   Request.Data.Avatar,
 		RolesIds: Request.Data.Roles,
-		Status:   1,
+		Status:   status,
 		Extra: map[string]interface{}{
 			"phone": Request.Data.Extra.Phone,
 			"email": Request.Data.Extra.Email,
